@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2c6204c37cd3d1d4bee8f683fd77892a",
-    "content-hash": "c27bc21aeb7f200149a92825cf6c6b84",
+    "hash": "0aa2ef8d56ad1558d1dbb814f6462a23",
+    "content-hash": "aa86c5fb948c80eef77c86904f5fd43e",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -2314,6 +2314,45 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "ise/php-metapackage-development",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/internalsystemerror/php-metapackage-development.git",
+                "reference": "c2f8901c4a6c9dac7851543c70e06b0312fce983"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/internalsystemerror/php-metapackage-development/zipball/c2f8901c4a6c9dac7851543c70e06b0312fce983",
+                "reference": "c2f8901c4a6c9dac7851543c70e06b0312fce983",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0",
+                "phploc/phploc": "^3.0",
+                "phpmd/phpmd": "^2.4",
+                "phpunit/phpunit": "^5.5",
+                "sebastian/phpcpd": "^2.0",
+                "sensiolabs/security-checker": "^3.0",
+                "squizlabs/php_codesniffer": "^2.7",
+                "theseer/phpdox": "^0.8 || ^1.0"
+            },
+            "type": "metapackage",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev",
+                    "dev-develop": "1.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Development metapackage for PHP used by Internalsystemerror Limited",
+            "homepage": "https://github.com/internalsystemerror/php-metapackage-development",
+            "time": "2016-12-22 13:31:12"
+        },
         {
             "name": "myclabs/deep-copy",
             "version": "1.5.5",
