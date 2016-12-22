@@ -1,5 +1,5 @@
 {
-    "name": "hounddog/doctrine-data-fixture-module",
+    "name": "ise/zf2-module-doctrinedatafixture",
     "description": "Zend Framework 2 Module that provides Doctrine Data-Fixture functionality",
     "type": "library",
     "license": "MIT",
@@ -9,29 +9,54 @@
         "module",
         "zf2"
     ],
-    "homepage": "http://www.doctrine-project.org/",
+    "homepage": "https://github.com/internalsystemerror/zf2-module-doctrinedatafixture",
     "authors": [
         {
             "name": "Martin Shwalbe",
             "email": "martin.shwalbe@gmail.com"
+        },
+        {
+            "name": "ise",
+            "email": "info@ise.me.uk"
         }
     ],
     "require": {
-        "php": ">=5.3.3",
-        "zendframework/zend-modulemanager": "2.*",
-        "zendframework/zend-eventmanager": "2.*",
-        "zendframework/zend-servicemanager": "2.*",
-        "doctrine/data-fixtures": "1.1.*",
-        "doctrine/doctrine-orm-module": "~0.7"
+        "zendframework/zend-modulemanager": "^2.5",
+        "zendframework/zend-eventmanager": "^2.5",
+        "zendframework/zend-servicemanager": "^2.5",
+        "doctrine/data-fixtures": "^1.0",
+        "doctrine/doctrine-orm-module": "^1.0"
     },
     "require-dev": {
-        "phpunit/phpunit" : "3.7.*",
-        "satooshi/php-coveralls": ">=0.6.0",
-        "squizlabs/php_codesniffer": "1.4.*"   
+        "ise/php-metapackage-development": "^1.0"
     },
     "autoload": {
-        "psr-0": {
-            "DoctrineDataFixtureModule": "src/"
+        "psr-4": {
+            "DoctrineDataFixtureModule\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DoctrineDataFixtureModuleTest\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev",
+            "dev-develop": "1.1.x-dev"
+        }
+    },
+    "scripts": {
+        "test": [
+            "@phpunit",
+            "@phpcs",
+            "@phpmd",
+            "@phpcpd"
+        ],
+        "phpunit": "phpunit -c ./phpunit.xml.dist",
+        "phpcs": "phpcs",
+        "phpcbf": "phpcbf",
+        "phpmd": "phpmd . html --reportfile ./build/logs/phpmd.html --suffixes php,phtml --exclude vendor,build ./phpmd.xml.dist",
+        "phpcpd": "phpcpd . --exclude=vendor --exclude=data"
     }
 }

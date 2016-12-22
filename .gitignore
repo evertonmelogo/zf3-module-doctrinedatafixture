@@ -1,4 +1,5 @@
-/build
+/nbproject/private
 /vendor
-composer.lock
-composer.phar
+/phpcs.xml
+/phpmd.xml
+/phpunit.xml
