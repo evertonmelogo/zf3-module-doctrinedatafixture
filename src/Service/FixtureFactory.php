@@ -59,10 +59,10 @@ class FixtureFactory implements FactoryInterface
     public function getOptions(ServiceLocatorInterface $serviceLocator)
     {
         $config = $serviceLocator->get('config');
-        if (!isset($config['doctrine']['fixture'])) {
+        if (!isset($config['doctrine']['fixtures'])) {
             return [];
         }
 
-        return $config['doctrine']['fixture'];
+        return $config['doctrine']['fixtures'];
     }
 }
