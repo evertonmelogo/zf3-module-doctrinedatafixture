@@ -59,6 +59,9 @@ class ImportCommand extends Command
      */
     protected $serviceLocator;
 
+    /**
+     * {@inheritDoc}
+     */
     public function __construct(ServiceLocatorInterface $serviceLocator)
     {
         $this->serviceLocator = $serviceLocator;
@@ -70,7 +73,7 @@ class ImportCommand extends Command
      *
      * @param array $paths
      */
-    public function setPath(array $paths)
+    public function setPaths($paths)
     {
         $this->paths = $paths;
     }

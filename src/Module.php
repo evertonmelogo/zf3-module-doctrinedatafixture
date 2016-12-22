@@ -42,7 +42,8 @@ class Module implements ConfigProviderInterface, InitProviderInterface, ServiceP
      */
     public function init(ModuleManagerInterface $manager)
     {
-        $manager->getEventManager()->getSharedManager()->attach(
+        $events = $manager->getEventManager()->getSharedManager();
+        $events->attach(
             'doctrine',
             'loadCli.post',
             [$this, 'initCli']
@@ -59,12 +60,13 @@ class Module implements ConfigProviderInterface, InitProviderInterface, ServiceP
     {
         $application    = $event->getTarget();
         $serviceManager = $event->getParam('ServiceManager');
-        $entityManager  = $application->getHelperSet()->get('em')->getEntityManager();
-        $paths          = $serviceManager->get('doctrine.configuration.fixtures');
+        $entityManager  = $serviceManager->get('Doctrine\ORM\EntityManager');
+        $paths          = $serviceManager->get('Doctrine\ORM\Configuration\Fixture');
 
         $importCommand = new ImportCommand($serviceManager);
         $importCommand->setEntityManager($entityManager);
-        $importCommand->setPath($paths);
+        $importCommand->setPaths($paths);
+        
         ConsoleRunner::addCommands($application);
         $application->addCommands([$importCommand]);
     }
