@@ -25,7 +25,6 @@ use DoctrineDataFixtureTest\TestAsset\Fixtures\NoSL\FixtureA as FixtureNoSL;
 use PHPUnit_Framework_TestCase;
 use Zend\ServiceManager\ServiceManager;
 use Zend\ServiceManager\ServiceLocatorAwareInterface;
-use Zend\Mvc\Service\ServiceManagerConfig;
 
 /**
  * Test Service Locator-aware fixture loader
@@ -44,8 +43,7 @@ class ServiceLocatorAwareLoaderTest extends PHPUnit_Framework_TestCase
     public function testLoadingFixtureWhichIsNotServiceLocatorAware()
     {
         $fixtureClassName = FixtureNoSL::class;
-        $serviceConfig    = new ServiceManagerConfig;
-        $serviceLocator   = new ServiceManager($serviceConfig);
+        $serviceLocator   = new ServiceManager;
         
         $loader = new ServiceLocatorAwareLoader($serviceLocator);
         $loader->loadFromDirectory(__DIR__ . '/../TestAsset/Fixtures/NoSL');
@@ -65,8 +63,7 @@ class ServiceLocatorAwareLoaderTest extends PHPUnit_Framework_TestCase
     public function testLoadingFixtureWhichIsServiceLocatorAware()
     {
         $fixtureClassName = FixedHasSL::class;
-        $serviceConfig    = new ServiceManagerConfig;
-        $serviceLocator   = new ServiceManager($serviceConfig);
+        $serviceLocator   = new ServiceManager;
         
         $loader = new ServiceLocatorAwareLoader($serviceLocator);
         $loader->loadFromDirectory(__DIR__ . '/../TestAsset/Fixtures/HasSL');

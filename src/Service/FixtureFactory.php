@@ -19,7 +19,7 @@
 
 namespace DoctrineDataFixtureModule\Service;
 
-use RuntimeException;
+use Interop\Container\ContainerInterface;
 use Zend\Stdlib\AbstractOptions;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
@@ -33,13 +33,21 @@ use Zend\ServiceManager\ServiceLocatorInterface;
  */
 class FixtureFactory implements FactoryInterface
 {
+    
+    /**
+     * {@inheritDoc}
+     */
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = [])
+    {
+        return $this->getOptions($container);
+    }
 
     /**
      * {@inheritDoc}
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        return $this->getOptions($serviceLocator, 'fixtures');
+        return $this->getOptions($serviceLocator);
     }
 
     /**
