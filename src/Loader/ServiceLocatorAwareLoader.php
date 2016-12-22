@@ -16,6 +16,7 @@
  * and is licensed under the LGPL. For more information, see
  * <http://www.doctrine-project.org>.
  */
+
 namespace DoctrineDataFixtureModule\Loader;
 
 use Doctrine\Common\DataFixtures\Loader as BaseLoader;
@@ -33,11 +34,17 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
  */
 class ServiceLocatorAwareLoader extends BaseLoader
 {
+
     /**
      * @var ServiceLocatorInterface
      */
     protected $serviceLocator;
 
+    /**
+     * Constructor
+     *
+     * @param ServiceLocatorInterface $serviceLocator
+     */
     public function __construct(ServiceLocatorInterface $serviceLocator)
     {
         $this->serviceLocator = $serviceLocator;
