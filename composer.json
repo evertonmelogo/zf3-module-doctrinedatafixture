@@ -21,9 +21,9 @@
         }
     ],
     "require": {
-        "zendframework/zend-modulemanager": "^2.5",
-        "zendframework/zend-eventmanager": "^2.5",
-        "zendframework/zend-servicemanager": "^2.5",
+        "zendframework/zend-modulemanager": "^2.5 || ^3.0",
+        "zendframework/zend-eventmanager": "^2.5 || ^3.0",
+        "zendframework/zend-servicemanager": "^2.5 || ^3.0",
         "doctrine/data-fixtures": "^1.0",
         "doctrine/doctrine-orm-module": "^1.0"
     },
