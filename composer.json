@@ -2,7 +2,7 @@
     "name": "ise/zf2-module-doctrinedatafixture",
     "description": "Zend Framework 2 Module that provides Doctrine Data-Fixture functionality",
     "type": "library",
-    "license": "MIT",
+    "license": "BSD-3-Clause",
     "keywords": [
         "doctrine",
         "data-fixture",
