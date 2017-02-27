@@ -2,7 +2,7 @@
     "name": "ise/zf2-module-doctrinedatafixture",
     "description": "Zend Framework 2 Module that provides Doctrine Data-Fixture functionality",
     "type": "library",
-    "license": "MIT",
+    "license": "BSD-3-Clause",
     "keywords": [
         "doctrine",
         "data-fixture",
@@ -21,9 +21,9 @@
         }
     ],
     "require": {
-        "zendframework/zend-modulemanager": "^2.5",
-        "zendframework/zend-eventmanager": "^2.5",
-        "zendframework/zend-servicemanager": "^2.5",
+        "zendframework/zend-modulemanager": "^2.5 || ^3.0",
+        "zendframework/zend-eventmanager": "^2.5 || ^3.0",
+        "zendframework/zend-servicemanager": "^2.5 || ^3.0",
         "doctrine/data-fixtures": "^1.0",
         "doctrine/doctrine-orm-module": "^1.0"
     },
@@ -37,7 +37,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "DoctrineDataFixtureModuleTest\\": "tests/"
+            "DoctrineDataFixtureModuleTest\\": "test/"
         }
     },
     "extra": {
@@ -47,16 +47,12 @@
         }
     },
     "scripts": {
-        "test": [
-            "@phpunit",
-            "@phpcs",
-            "@phpmd",
-            "@phpcpd"
-        ],
-        "phpunit": "phpunit -c ./phpunit.xml.dist",
-        "phpcs": "phpcs",
-        "phpcbf": "phpcbf",
-        "phpmd": "phpmd . html --reportfile ./build/logs/phpmd.html --suffixes php,phtml --exclude vendor,build ./phpmd.xml.dist",
-        "phpcpd": "phpcpd . --exclude=vendor --exclude=data"
+        "test": "phpunit -c ./phpunit.xml.dist",
+        "cs-fix": "phpcbf",
+        "cs-check": [
+            "phpcs",
+            "phpmd ./config,./src,./test, html --reportfile ./build/logs/phpmd.html --suffixes php,phtml ./phpmd.xml.dist",
+            "phpcpd . --exclude=build --exclude=vendor"
+        ]
     }
 }
