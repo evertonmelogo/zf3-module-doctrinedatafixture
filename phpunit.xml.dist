@@ -12,8 +12,8 @@
          verbose="true">
 
     <testsuites>
-        <testsuite name="DoctrineDataFixture Module Tests">
-            <directory>./tests</directory>
+        <testsuite name="ZF2: Module (DoctrineDataFixture)">
+            <directory>./test</directory>
         </testsuite>
     </testsuites>
     <groups>

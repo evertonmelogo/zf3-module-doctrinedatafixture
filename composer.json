@@ -37,7 +37,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "DoctrineDataFixtureModuleTest\\": "tests/"
+            "DoctrineDataFixtureModuleTest\\": "test/"
         }
     },
     "extra": {
@@ -47,16 +47,12 @@
         }
     },
     "scripts": {
-        "test": [
-            "@phpunit",
-            "@phpcs",
-            "@phpmd",
-            "@phpcpd"
-        ],
-        "phpunit": "phpunit -c ./phpunit.xml.dist",
-        "phpcs": "phpcs",
-        "phpcbf": "phpcbf",
-        "phpmd": "phpmd . html --reportfile ./build/logs/phpmd.html --suffixes php,phtml --exclude vendor,build ./phpmd.xml.dist",
-        "phpcpd": "phpcpd . --exclude=vendor --exclude=data"
+        "test": "phpunit -c ./phpunit.xml.dist",
+        "cs-fix": "phpcbf",
+        "cs-check": [
+            "phpcs",
+            "phpmd ./config,./src,./test, html --reportfile ./build/logs/phpmd.html --suffixes php,phtml ./phpmd.xml.dist",
+            "phpcpd . --exclude=build --exclude=vendor"
+        ]
     }
 }
