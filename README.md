@@ -1,6 +1,6 @@
 # DoctrineDataFixture Module for Zend Framework 2
 
-[![Build Status](https://travis-ci.org/internalsystemerror/DoctrineDataFixtureModule.png)](https://travis-ci.org/internalsystemerror/DoctrineDataFixtureModule)
+[![Build Status](https://travis-ci.org/internalsystemerror/zf2-module-doctrinedatafixture.png)](https://travis-ci.org/internalsystemerror/zf2-module-doctrinedatafixture)
 
 ## Introduction
 
@@ -23,7 +23,7 @@ Installation of this module uses composer. For composer documentation, please
 refer to [getcomposer.org](http://getcomposer.org/).
 
 ```sh
-$ php composer.phar require internalsystemerror/doctrine-data-fixture-module:^1.0
+$ php composer.phar require ise/zf2-module-doctrinedatafixture:*
 ```
 
 Then open `config/application.config.php` and add `DoctrineModule`,
