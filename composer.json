@@ -1,6 +1,6 @@
 {
-    "name": "ise/zf2-module-doctrinedatafixture",
-    "description": "Zend Framework 2 Module that provides Doctrine Data-Fixture functionality",
+    "name": "zendmaniacs/zf2-module-doctrinedatafixture",
+    "description": "Zend Framework 3 Module that provides Doctrine Data-Fixture functionality",
     "type": "library",
     "license": "BSD-3-Clause",
     "keywords": [
@@ -9,7 +9,7 @@
         "module",
         "zf2"
     ],
-    "homepage": "https://github.com/internalsystemerror/zf2-module-doctrinedatafixture",
+    "homepage": "https://github.com/zendmaniacs/zf3-module-doctrinedatafixture",
     "authors": [
         {
             "name": "Martin Shwalbe",
