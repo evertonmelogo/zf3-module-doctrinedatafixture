@@ -1,5 +1,5 @@
 {
-    "name": "zendmaniacs/zf2-module-doctrinedatafixture",
+    "name": "zendmaniacs/zf3-module-doctrinedatafixture",
     "description": "Zend Framework 3 Module that provides Doctrine Data-Fixture functionality",
     "type": "library",
     "license": "BSD-3-Clause",
