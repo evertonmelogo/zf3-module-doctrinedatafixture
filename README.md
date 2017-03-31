@@ -38,7 +38,7 @@ configuration.
 <?php
 return array(
       'doctrine' => array(
-            'fixture' => array(
+            'fixtures' => array(
                   'ModuleName_fixture' => __DIR__ . '/../src/ModuleName/Fixture',
             )
       )
